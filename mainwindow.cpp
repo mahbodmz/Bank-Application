@@ -1,10 +1,16 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "clickablelabel.h"
+#include "admin.h"
+#include "customer.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
+    Admin::loadFromFile(adminHead);
+    Customer::loadFromFile(customerHead);
+
     ui->setupUi(this);
     currentRole="";
     connect(ui->customerBtn, &QPushButton::clicked, this, [=]() {
@@ -26,6 +32,9 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    Admin::saveToFile(adminHead);
+    Customer::saveToFile(customerHead);
+
     delete ui;
 }
 

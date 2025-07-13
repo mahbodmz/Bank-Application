@@ -1,13 +1,13 @@
-#ifndef ADMIN_H
-#define ADMIN_H
+#ifndef COSTUMER_H
+#define COSTUMER_H
 
 #include "user.h"
 #include "usernode.h"
-class Admin : public User{
+class Customer:public User{
 public:
-    Admin();
-    Admin(QString uname, QString pword) : User(uname, pword) {}
-    virtual ~Admin();
+    Customer();
+    Customer(QString uname, QString pword) : User(uname, pword) {}
+    virtual ~Customer();
 
     void login() const override;
     void signup() const override;
@@ -19,4 +19,4 @@ public:
 
 
 
-#endif // ADMIN_H
+#endif // COSTUMER_H

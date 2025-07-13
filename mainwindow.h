@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include "usernode.h"
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -35,6 +35,8 @@ private slots:
     void on_loginBtn_clicked();
 
 private:
+    UserNode* adminHead = nullptr;
+    UserNode* customerHead = nullptr;
     Ui::MainWindow *ui;
     QString currentRole;
 };

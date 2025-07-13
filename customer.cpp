@@ -1,22 +1,21 @@
-#include "admin.h"
+#include "customer.h"
 #include <QFile>
 #include <QTextStream>
-Admin::Admin() {}
+Customer::Customer() {}
 
-Admin::~Admin() {}
+Customer::~Customer() {}
 
-void Admin::login() const {
-    //being made ....
+void Customer::login() const{
+    //being made...
 }
 
-void Admin::signup() const {
-    //being made ....
+void Customer::signup() const{
+    //being made...
 }
 
 
-
-void Admin::loadFromFile(UserNode*& head) {
-    QFile file("admin.txt");
+void Customer::loadFromFile(UserNode*& head) {
+    QFile file("customer.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
 
     QTextStream in(&file);
@@ -27,7 +26,7 @@ void Admin::loadFromFile(UserNode*& head) {
             QString username = parts[0];
             QString password = parts[1];
 
-            Admin* a = new Admin(username, password);
+            Customer* a = new Customer(username, password);
             UserNode* newNode = new UserNode(a);
             newNode->next = head;
             head = newNode;
@@ -37,13 +36,13 @@ void Admin::loadFromFile(UserNode*& head) {
 }
 
 
-void Admin::saveToFile(UserNode* head) {
-    QFile file("admin.txt");
+void Customer::saveToFile(UserNode* head) {
+    QFile file("Customer.txt");
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) return;
 
     QTextStream out(&file);
     while (head) {
-        Admin* a = dynamic_cast<Admin*>(head->data);
+        Customer* a = dynamic_cast<Customer*>(head->data);
         if (a) {
             out << a->getUsername() << "," << a->getPassword() << "\n";
         }

@@ -156,7 +156,7 @@ QPushButton:pressed {
 </string>
                 </property>
                 <property name="text">
-                 <string>Login as Costumer</string>
+                 <string>Login as Customer</string>
                 </property>
                </widget>
               </item>
@@ -381,7 +381,7 @@ font-weight: bold;
 color: rgb(0, 85, 0);</string>
              </property>
              <property name="text">
-              <string>Welcome To The Costumer Menu</string>
+              <string>Welcome To The Customer Menu</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
