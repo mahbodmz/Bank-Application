@@ -16,12 +16,17 @@ protected:
     QString password;
 public:
     User();
-    User(QString uname, QString pword) : username(uname), password(pword) {}
+    User(QString name, QString lastName, QString id, int age, QString username, QString password)
+        : name(name), lastName(lastName), id(id), age(age), username(username), password(password) {}
     virtual ~User();
 
 
-    QString getUsername() const;
-    QString getPassword() const;
+    QString getName() const ;
+    QString getLastName() const ;
+    QString getId() const ;
+    int getAge() const ;
+    QString getUsername() const ;
+    QString getPassword() const ;
 
 
     void setUsername(const QString& uname);

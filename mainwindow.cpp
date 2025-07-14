@@ -3,6 +3,7 @@
 #include "clickablelabel.h"
 #include "admin.h"
 #include "customer.h"
+#include "QMessageBox"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -77,5 +78,28 @@ void MainWindow::on_loginBtn_clicked()
     } else if (currentRole == "Customer") {
         ui->stackedWidget->setCurrentIndex(1); // Customer menu page
     }
+}
+
+
+void MainWindow::on_signupBtn_clicked()
+{
+    QString name = ui->nameLineEdit->text().trimmed();
+    QString lastname = ui->lastNameLineEdit->text().trimmed();
+    QString id=ui->idLineEdit->text().trimmed();
+    int age=ui->ageSpinBox->value();
+    QString username=ui->userNameLineEdit->text().trimmed();
+    QString password=ui->passwordLineEdit->text().trimmed();
+
+    if (name.isEmpty() || lastname.isEmpty() || id.isEmpty() ||username.isEmpty() || password.isEmpty()) {
+        QMessageBox::warning(this, "Signup Error", "Please fill in all fields before signing up.");
+        return;
+    }
+
+    Admin::signup(name,lastname,id,age,username,password,adminHead);
+
+
+
+
+
 }
 

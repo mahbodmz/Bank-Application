@@ -1,9 +1,14 @@
 #include "admin.h"
 #include <QFile>
 #include <QTextStream>
+#include <QMessageBox>
+#include <QCoreApplication>
+#include <QDir>
 Admin::Admin() {}
 
 Admin::~Admin() {}
+
+UserNode* Admin::head = nullptr;
 
 void Admin::login() const {
     //being made ....
@@ -11,6 +16,31 @@ void Admin::login() const {
 
 void Admin::signup() const {
     //being made ....
+}
+
+
+void Admin::signup(const QString& name, const QString& lastName, const QString& id,int age, const QString& username, const QString& password ,UserNode*& head) {
+
+    UserNode* current = head;
+    while (current) {
+        Admin* existingAdmin = dynamic_cast<Admin*>(current->data);
+        if (existingAdmin && existingAdmin->getUsername() == username) {
+            QMessageBox::warning(nullptr, "Signup Error", "Username is already taken!");
+            return;
+        }
+        current = current->next;
+    }
+
+
+    Admin* newAdmin = new Admin(name, lastName, id, age, username, password);
+    UserNode* newNode = new UserNode(newAdmin);
+    newNode->next = head;
+    head = newNode;
+
+
+    //saveToFile(head);
+
+    QMessageBox::information(nullptr, "Signup Successful", "Admin signed up successfully!");
 }
 
 
@@ -23,11 +53,15 @@ void Admin::loadFromFile(UserNode*& head) {
     while (!in.atEnd()) {
         QString line = in.readLine();
         QStringList parts = line.split(',');
-        if (parts.size() >= 2) {
-            QString username = parts[0];
-            QString password = parts[1];
+        if (parts.size() == 6) {
+            QString name = parts[0];
+            QString lastName = parts[1];
+            QString id = parts[2];
+            int age = parts[3].toInt();
+            QString username = parts[4];
+            QString password = parts[5];
 
-            Admin* a = new Admin(username, password);
+            Admin* a = new Admin(name, lastName, id, age, username, password);
             UserNode* newNode = new UserNode(a);
             newNode->next = head;
             head = newNode;
@@ -38,16 +72,31 @@ void Admin::loadFromFile(UserNode*& head) {
 
 
 void Admin::saveToFile(UserNode* head) {
+    qDebug() << "Saving admin data to file...";
     QFile file("admin.txt");
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) return;
+
+    qDebug() << "Saving admin file at:" << QDir::currentPath() + "/admin.txt";
+
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        qDebug() << "Failed to open the file for writing.";
+        return;
+    }
 
     QTextStream out(&file);
+
     while (head) {
-        Admin* a = dynamic_cast<Admin*>(head->data);
-        if (a) {
-            out << a->getUsername() << "," << a->getPassword() << "\n";
+        Admin* admin = dynamic_cast<Admin*>(head->data);
+        if (admin) {
+            out << admin->getName() << ","
+                << admin->getLastName() << ","
+                << admin->getId() << ","
+                << admin->getAge() << ","
+                << admin->getUsername() << ","
+                << admin->getPassword() << "\n";
         }
         head = head->next;
     }
+
     file.close();
+    qDebug() << "Admin data saved successfully.";
 }

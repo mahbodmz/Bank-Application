@@ -6,11 +6,15 @@
 class Admin : public User{
 public:
     Admin();
-    Admin(QString uname, QString pword) : User(uname, pword) {}
+    Admin(QString name, QString lastName, QString id, int age, QString username, QString password)
+        : User(name, lastName, id, age, username, password) {}
     virtual ~Admin();
+
+    static UserNode* head;
 
     void login() const override;
     void signup() const override;
+    static void signup(const QString& name, const QString& lastName, const QString& id,int age, const QString& username, const QString& password , UserNode*& head);
 
     static void loadFromFile(UserNode*& head);
     static void saveToFile(UserNode* head);

@@ -6,7 +6,8 @@
 class Customer:public User{
 public:
     Customer();
-    Customer(QString uname, QString pword) : User(uname, pword) {}
+    Customer(QString name, QString lastName, QString id, int age, QString username, QString password)
+        : User(name, lastName, id, age, username, password) {}
     virtual ~Customer();
 
     void login() const override;

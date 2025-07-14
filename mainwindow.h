@@ -34,6 +34,8 @@ private slots:
 
     void on_loginBtn_clicked();
 
+    void on_signupBtn_clicked();
+
 private:
     UserNode* adminHead = nullptr;
     UserNode* customerHead = nullptr;
