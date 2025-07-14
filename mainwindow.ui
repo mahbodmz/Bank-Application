@@ -51,7 +51,7 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_0">
        <layout class="QGridLayout" name="gridLayout_2">
@@ -1776,7 +1776,7 @@ QLineEdit:focus {
                </widget>
               </item>
               <item row="1" column="1">
-               <widget class="QSpinBox" name="spinBox">
+               <widget class="QSpinBox" name="ageCustomerSpinBox">
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
                 </property>
@@ -1950,7 +1950,7 @@ QPushButton:pressed {
 </string>
                 </property>
                 <property name="text">
-                 <string>PushButton</string>
+                 <string>Confirm</string>
                 </property>
                </widget>
               </item>

@@ -91,7 +91,13 @@ void MainWindow::on_loginBtn_clicked()
 
     }
     else if (currentRole == "Customer") {
-        ui->stackedWidget->setCurrentIndex(1); // Customer menu page
+
+        Customer temp;
+        if (temp.login(username, password, customerHead)) {
+            ui->stackedWidget->setCurrentIndex(1); // Customer menu page
+        } else {
+            QMessageBox::warning(this, "Login Failed", "Incorrect username or password");
+        }
     }
 }
 
@@ -128,5 +134,26 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_addCustomersBtn_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
+}
+
+
+void MainWindow::on_signupCustomerBtn_clicked()
+{
+    QString name = ui->nameCustomerLineEdit->text();
+    QString lastName = ui->lastNameCustomerLineEdit->text();
+    QString id = ui->idCustomerLineEdit->text();
+    int age = ui->ageCustomerSpinBox->value();
+    QString username = ui->usernameCustomerLineEdit->text();
+    QString password = ui->passwordCustomerLineEdit->text();
+
+    if (name.isEmpty() || lastName.isEmpty() || id.isEmpty() ||username.isEmpty() || password.isEmpty()) {
+        QMessageBox::warning(this, "Input Error", "Please fill all fields.");
+        return;
+    }
+
+
+
+    // Call the signup function
+    Customer::signup(name, lastName, id, age, username, password, customerHead);
 }
 

@@ -1,5 +1,5 @@
-#ifndef COSTUMER_H
-#define COSTUMER_H
+#ifndef CUSTOMER_H
+#define CUSTOMER_H
 
 #include "user.h"
 #include "usernode.h"
@@ -14,11 +14,14 @@ public:
 
     void signup() const override;
 
+    static void signup(const QString& name, const QString& lastName, const QString& id,int age, const QString& username, const QString& password , UserNode*& head);
+
     static void loadFromFile(UserNode*& head);
     static void saveToFile(UserNode* head);
+
     static bool login(UserNode* head, const QString& username, const QString& password);
 };
 
 
 
-#endif // COSTUMER_H
+#endif // CUSTOMER_H

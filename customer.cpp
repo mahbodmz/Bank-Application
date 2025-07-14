@@ -1,18 +1,48 @@
 #include "customer.h"
 #include <QFile>
 #include <QTextStream>
+#include <QMessageBox>
 Customer::Customer() {}
 
 Customer::~Customer() {}
 
-bool Customer::login(const QString& username, const QString& password, UserNode* head) {
-    //being made...
+bool Customer::login(const QString& username, const QString& password, UserNode* head)
+{
+    UserNode* current = head;
+    while (current != nullptr) {
+        if (current->data->getUsername() == username &&
+            current->data->getPassword() == password) {
+            return true;
+        }
+        current = current->next;
+    }
+    return false;
 }
 
 void Customer::signup() const{
     //being made...
 }
+void Customer::signup(const QString& name, const QString& lastName, const QString& id,int age, const QString& username, const QString& password,UserNode*& head)
+{
 
+    UserNode* current = head;
+    while (current) {
+        Customer* existingCustomer = dynamic_cast<Customer*>(current->data);
+        if (existingCustomer && existingCustomer->getUsername() == username) {
+            QMessageBox::warning(nullptr, "Signup Error", "Username is already taken!");
+            return;
+        }
+        current = current->next;
+    }
+
+
+    Customer* newCustomer = new Customer(name, lastName, id, age, username, password);
+    UserNode* newNode = new UserNode(newCustomer);
+    newNode->next = head;
+    head = newNode;
+
+    QMessageBox::information(nullptr, "Signup Successful", "Customer signed up successfully!");
+}
 
 void Customer::loadFromFile(UserNode*& head) {
     QFile file("customer.txt");
