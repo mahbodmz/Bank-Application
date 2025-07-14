@@ -1,7 +1,7 @@
 #ifndef USERNODE_H
 #define USERNODE_H
 
-#include "user.h"
+class User;
 
 struct UserNode {
     User* data;

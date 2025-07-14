@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->adminBtn, &QPushButton::clicked, this, [=]() {
         currentRole = "Admin";
         ui->loginHeaderLabel->setText("Enter username and password as Admin");
+
         ui->stackedWidget->setCurrentIndex(2);
     });
 
@@ -73,9 +74,23 @@ void MainWindow::on_backBtn_5_clicked()
 
 void MainWindow::on_loginBtn_clicked()
 {
+    QString username = ui->usernameLoginLineEdit->text();
+    QString password = ui->passwordloginLineEdit->text();
+    if (username.isEmpty() || password.isEmpty()) {
+        QMessageBox::warning(this, "Login Error", "Please enter both username and password.");
+        return;
+    }
+
     if (currentRole == "Admin") {
-        ui->stackedWidget->setCurrentIndex(4); // Admin menu page
-    } else if (currentRole == "Customer") {
+        Admin temp;
+        if (temp.login(username, password, adminHead)) {
+            ui->stackedWidget->setCurrentIndex(4);
+        } else {
+            QMessageBox::warning(this, "Login Failed", "Incorrect username or password");
+        }
+
+    }
+    else if (currentRole == "Customer") {
         ui->stackedWidget->setCurrentIndex(1); // Customer menu page
     }
 }
@@ -101,5 +116,17 @@ void MainWindow::on_signupBtn_clicked()
 
 
 
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
+
+void MainWindow::on_addCustomersBtn_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
 }
 

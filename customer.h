@@ -10,7 +10,8 @@ public:
         : User(name, lastName, id, age, username, password) {}
     virtual ~Customer();
 
-    void login() const override;
+    bool login(const QString& username, const QString& password, UserNode* head) override;
+
     void signup() const override;
 
     static void loadFromFile(UserNode*& head);

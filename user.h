@@ -2,6 +2,7 @@
 #define USER_H
 #include <string>
 #include <QString>
+#include "userNode.h"
 using namespace std;
 
 
@@ -35,7 +36,7 @@ public:
 
     virtual void signup() const=0;
 
-    virtual void login() const=0;
+    virtual bool login(const QString& username, const QString& password, UserNode* head) =0 ;
 
 
 

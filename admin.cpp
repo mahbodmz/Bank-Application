@@ -10,8 +10,16 @@ Admin::~Admin() {}
 
 UserNode* Admin::head = nullptr;
 
-void Admin::login() const {
-    //being made ....
+bool Admin::login(const QString& username, const QString& password, UserNode* head)  {
+    UserNode* current = head;
+    while (current) {
+        Admin* admin = dynamic_cast<Admin*>(current->data);
+        if (admin && admin->getUsername() == username && admin->getPassword() == password) {
+            return true;
+        }
+        current = current->next;
+    }
+    return false;
 }
 
 void Admin::signup() const {

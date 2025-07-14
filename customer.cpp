@@ -5,7 +5,7 @@ Customer::Customer() {}
 
 Customer::~Customer() {}
 
-void Customer::login() const{
+bool Customer::login(const QString& username, const QString& password, UserNode* head) {
     //being made...
 }
 

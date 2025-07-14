@@ -12,7 +12,7 @@ public:
 
     static UserNode* head;
 
-    void login() const override;
+    bool login(const QString& username, const QString& password, UserNode* head) override;
     void signup() const override;
     static void signup(const QString& name, const QString& lastName, const QString& id,int age, const QString& username, const QString& password , UserNode*& head);
 
