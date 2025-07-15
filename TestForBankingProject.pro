@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     admin.cpp \
     clickablelabel.cpp \
+    creditcard.cpp \
     customer.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
 HEADERS += \
     admin.h \
     clickablelabel.h \
+    creditcard.h \
     customer.h \
     mainwindow.h \
     user.h \

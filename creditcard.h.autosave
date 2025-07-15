@@ -1,0 +1,35 @@
+#ifndef CREDITCARD_H
+#define CREDITCARD_H
+#include <QString>
+
+class CreditCard
+{
+protected:
+    int cardNum;
+    int shabaNum;
+    int accountNum;
+    int cvv;
+    int balance;
+    int expireYear;
+    int expireMonth;
+    QString password;
+    QString secondPassword;
+public:
+    CreditCard();
+    
+    CreditCard(int cardNum , int shabaNum ,int acco)
+    
+    int getcardNum ();
+    int getshabaNum ();
+    int getaccountNum ();
+    int getcvv ();
+    int getbalance ();
+    int getexpireYear ();
+    int getexpireMonth();
+    QString getpassword ();
+    QString getsecondPassword ();
+    
+    virtual void moneyTransfer() = 0;
+};
+
+#endif // CREDITCARD_H

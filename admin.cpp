@@ -46,7 +46,7 @@ void Admin::signup(const QString& name, const QString& lastName, const QString& 
     head = newNode;
 
 
-    //saveToFile(head);
+
 
     QMessageBox::information(nullptr, "Signup Successful", "Admin signed up successfully!");
 }
