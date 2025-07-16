@@ -9,19 +9,23 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    accountutils.cpp \
     admin.cpp \
     clickablelabel.cpp \
     creditcard.cpp \
     customer.cpp \
+    debitaccount.cpp \
     main.cpp \
     mainwindow.cpp \
     user.cpp
 
 HEADERS += \
+    accountutils.h \
     admin.h \
     clickablelabel.h \
     creditcard.h \
     customer.h \
+    debitaccount.h \
     mainwindow.h \
     user.h \
     userNode.h

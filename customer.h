@@ -3,7 +3,11 @@
 
 #include "user.h"
 #include "usernode.h"
+#include "creditcard.h"
 class Customer:public User{
+private:
+    CreditCard* accounts[5];
+    int accountCount;
 public:
     Customer();
     Customer(QString name, QString lastName, QString id, int age, QString username, QString password)
@@ -20,6 +24,10 @@ public:
     static void saveToFile(UserNode* head);
 
     static bool login(UserNode* head, const QString& username, const QString& password);
+
+    bool addAccount(CreditCard* newAcc);
+    CreditCard* getAccount(int index) const;
+    int getAccountCount() const;
 };
 
 

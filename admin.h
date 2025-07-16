@@ -3,6 +3,8 @@
 
 #include "user.h"
 #include "usernode.h"
+#include "creditcard.h"
+#include "customer.h"
 class Admin : public User{
 public:
     Admin();
@@ -19,6 +21,7 @@ public:
     static void loadFromFile(UserNode*& head);
     static void saveToFile(UserNode* head);
     static bool login(UserNode* head, const QString& username, const QString& password);
+    void addAccountForCustomer(Customer* customer, CreditCard* account);
 };
 
 

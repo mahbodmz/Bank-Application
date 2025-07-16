@@ -2,17 +2,22 @@
 
 CreditCard::CreditCard() {}
 
-CreditCard::CreditCard(int cardNum , int shabaNum ,int accountNum,int cvv,int balance,int expireYear,int expireMonth,QString password,QString secondPassword) {
-    cardNum(cardNum);
-    shabaNum(shabaNum);
-    accountNum(accountNum);
-    cvv(cvv);
-    balance(balance);
-    expireYear(expireYear);
-    expireMonth(expireMonth);
-    password(password);
-    secondPassword(secondPassword);
+CreditCard::CreditCard(int cardNum, int shabaNum, int accountNum, int cvv, float balance,
+                       int expireYear, int expireMonth, QString password, QString secondPassword)
+{
+    this->cardNum = cardNum;
+    this->shabaNum = shabaNum;
+    this->accountNum = accountNum;
+    this->cvv = cvv;
+    this->balance = balance;
+    this->expireYear = expireYear;
+    this->expireMonth = expireMonth;
+    this->password = password;
+    this->secondPassword = secondPassword;
 }
+
+CreditCard::~CreditCard() {}
+
 
 int CreditCard::getcardNum(){
     return cardNum;
@@ -30,7 +35,7 @@ int CreditCard::getcvv(){
     return cvv;
 }
 
-int CreditCard::getbalance(){
+float CreditCard::getbalance(){
     return balance;
 }
 

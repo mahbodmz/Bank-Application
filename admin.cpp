@@ -1,4 +1,5 @@
 #include "admin.h"
+#include "customer.h"
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
@@ -107,4 +108,10 @@ void Admin::saveToFile(UserNode* head) {
 
     file.close();
     qDebug() << "Admin data saved successfully.";
+}
+
+void Admin::addAccountForCustomer(Customer* customer, CreditCard* account) {
+    if (customer && account) {
+        customer->addAccount(account);
+    }
 }

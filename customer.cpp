@@ -2,7 +2,11 @@
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
-Customer::Customer() {}
+Customer::Customer() {
+    accountCount = 0;
+    for (int i = 0; i < 5; ++i)
+        accounts[i] = nullptr;
+}
 
 Customer::~Customer() {}
 
@@ -90,4 +94,22 @@ void Customer::saveToFile(UserNode* head) {
     }
 
     file.close();
+}
+
+bool Customer::addAccount(CreditCard* newAcc) {
+    if (accountCount < 5) {
+        accounts[accountCount++] = newAcc;
+        return true;
+    }
+    return false;
+}
+
+CreditCard* Customer::getAccount(int index) const {
+    if (index >= 0 && index < accountCount)
+        return accounts[index];
+    return nullptr;
+}
+
+int Customer::getAccountCount() const {
+    return accountCount;
 }

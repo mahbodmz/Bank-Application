@@ -18,6 +18,9 @@ public:
     ~MainWindow();
 
 private slots:
+
+    void handleAddAccountForCustomer();
+
     void on_backBtn_1_clicked();
 
 
@@ -36,11 +39,19 @@ private slots:
 
     void on_signupBtn_clicked();
 
-    void on_pushButton_clicked();
+    void on_backBtn_6_clicked();
 
     void on_addCustomersBtn_clicked();
 
     void on_signupCustomerBtn_clicked();
+
+
+
+    void on_addAccountBtn_clicked();
+
+    void on_backBtn_7_clicked();
+
+    void on_backBtn_8_clicked();
 
 private:
     UserNode* adminHead = nullptr;

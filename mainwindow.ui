@@ -51,7 +51,7 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>7</number>
       </property>
       <widget class="QWidget" name="page_0">
        <layout class="QGridLayout" name="gridLayout_2">
@@ -404,38 +404,8 @@ color: rgb(0, 85, 0);</string>
            <item>
             <widget class="QWidget" name="widget_9" native="true">
              <layout class="QGridLayout" name="gridLayout_7">
-              <item row="0" column="1">
-               <widget class="QPushButton" name="viewAccountsBtn">
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
-    background-color: #2ecc71;       /* Green with good contrast */
-    color: white;                    /* Visible text */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-QPushButton:hover {
-    background-color: #27ae60;       /* Darker green on hover */
-}
-
-QPushButton:pressed {
-    background-color: #1e8449;       /* Even darker on press */
-}
-</string>
-                </property>
-                <property name="text">
-                 <string>View All Accounts</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <spacer name="horizontalSpacer_17">
+              <item row="1" column="2">
+               <spacer name="horizontalSpacer_20">
                 <property name="orientation">
                  <enum>Qt::Orientation::Horizontal</enum>
                 </property>
@@ -477,6 +447,62 @@ QPushButton:pressed {
                 </property>
                </widget>
               </item>
+              <item row="0" column="4">
+               <spacer name="horizontalSpacer_18">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="0">
+               <spacer name="horizontalSpacer_17">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="1">
+               <widget class="QPushButton" name="viewAccountsBtn">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    background-color: #2ecc71;       /* Green with good contrast */
+    color: white;                    /* Visible text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #27ae60;       /* Darker green on hover */
+}
+
+QPushButton:pressed {
+    background-color: #1e8449;       /* Even darker on press */
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>View All Accounts</string>
+                </property>
+               </widget>
+              </item>
               <item row="0" column="3">
                <widget class="QPushButton" name="firstPassBtn">
                 <property name="cursor">
@@ -507,6 +533,45 @@ QPushButton:pressed {
                 </property>
                </widget>
               </item>
+              <item row="0" column="2">
+               <spacer name="horizontalSpacer_16">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="1" column="0">
+               <spacer name="horizontalSpacer_19">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="1" column="4">
+               <spacer name="horizontalSpacer_21">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
               <item row="1" column="1">
                <widget class="QPushButton" name="depositBtn">
                 <property name="cursor">
@@ -536,71 +601,6 @@ QPushButton:pressed {
                  <string>Deposit</string>
                 </property>
                </widget>
-              </item>
-              <item row="0" column="2">
-               <spacer name="horizontalSpacer_16">
-                <property name="orientation">
-                 <enum>Qt::Orientation::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="0" column="4">
-               <spacer name="horizontalSpacer_18">
-                <property name="orientation">
-                 <enum>Qt::Orientation::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="1" column="0">
-               <spacer name="horizontalSpacer_19">
-                <property name="orientation">
-                 <enum>Qt::Orientation::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="1" column="2">
-               <spacer name="horizontalSpacer_20">
-                <property name="orientation">
-                 <enum>Qt::Orientation::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="1" column="4">
-               <spacer name="horizontalSpacer_21">
-                <property name="orientation">
-                 <enum>Qt::Orientation::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
               </item>
              </layout>
             </widget>
@@ -1417,67 +1417,7 @@ color: rgb(0, 85, 255);
            <item>
             <widget class="QWidget" name="widget_12" native="true">
              <layout class="QGridLayout" name="gridLayout_9">
-              <item row="2" column="1">
-               <widget class="QPushButton" name="changeMyInfoBtn">
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
-    background-color: #3498db;       /* Soft but visible blue */
-    color: white;                    /* Clear text */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-QPushButton:hover {
-    background-color: #2d89c6;       /* Slightly darker on hover */
-}
-
-QPushButton:pressed {
-    background-color: #1b639c;       /* Darkest on press */
-}
-</string>
-                </property>
-                <property name="text">
-                 <string>Change My Infos</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="1">
-               <widget class="QPushButton" name="deleteCustomersBtn">
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
-    background-color: #3498db;       /* Soft but visible blue */
-    color: white;                    /* Clear text */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-QPushButton:hover {
-    background-color: #2d89c6;       /* Slightly darker on hover */
-}
-
-QPushButton:pressed {
-    background-color: #1b639c;       /* Darkest on press */
-}
-</string>
-                </property>
-                <property name="text">
-                 <string>Delete Customers</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
+              <item row="2" column="0">
                <widget class="QPushButton" name="addCustomersBtn">
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
@@ -1507,7 +1447,7 @@ QPushButton:pressed {
                 </property>
                </widget>
               </item>
-              <item row="0" column="1">
+              <item row="1" column="1">
                <widget class="QPushButton" name="viewAllAccountsBtn">
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
@@ -1537,7 +1477,37 @@ QPushButton:pressed {
                 </property>
                </widget>
               </item>
-              <item row="0" column="0">
+              <item row="3" column="1">
+               <widget class="QPushButton" name="changeMyInfoBtn">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    background-color: #3498db;       /* Soft but visible blue */
+    color: white;                    /* Clear text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2d89c6;       /* Slightly darker on hover */
+}
+
+QPushButton:pressed {
+    background-color: #1b639c;       /* Darkest on press */
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>Change My Infos</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
                <widget class="QPushButton" name="viewAllUsersBtn">
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
@@ -1567,7 +1537,37 @@ QPushButton:pressed {
                 </property>
                </widget>
               </item>
-              <item row="2" column="0">
+              <item row="2" column="1">
+               <widget class="QPushButton" name="deleteCustomersBtn">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    background-color: #3498db;       /* Soft but visible blue */
+    color: white;                    /* Clear text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2d89c6;       /* Slightly darker on hover */
+}
+
+QPushButton:pressed {
+    background-color: #1b639c;       /* Darkest on press */
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>Delete Customers</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
                <widget class="QPushButton" name="viewAllAdminBtn">
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
@@ -1594,6 +1594,36 @@ QPushButton:pressed {
                 </property>
                 <property name="text">
                  <string>View All Admins</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QPushButton" name="addAccountBtn">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    background-color: #3498db;       /* Soft but visible blue */
+    color: white;                    /* Clear text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2d89c6;       /* Slightly darker on hover */
+}
+
+QPushButton:pressed {
+    background-color: #1b639c;       /* Darkest on press */
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>Add Account For Customers</string>
                 </property>
                </widget>
               </item>
@@ -1648,7 +1678,7 @@ QPushButton:pressed {
             <widget class="QWidget" name="widget_13" native="true">
              <layout class="QHBoxLayout" name="horizontalLayout_9">
               <item>
-               <widget class="QPushButton" name="pushButton">
+               <widget class="QPushButton" name="backBtn_6">
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
                 </property>
@@ -1959,6 +1989,605 @@ QPushButton:pressed {
            </item>
            <item>
             <spacer name="verticalSpacer_12">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_6">
+       <layout class="QGridLayout" name="gridLayout_12">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QFrame" name="frame_7">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 203, 169);</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Shadow::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QWidget" name="widget_15" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_11">
+              <item>
+               <widget class="QPushButton" name="backBtn_7">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    
+	background-color: rgb(240, 8, 11);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 8px;
+	
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: rgb(220, 8, 11);
+}
+
+QPushButton:pressed {
+    background-color: rgb(250, 8, 11);
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>Back</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_23">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="styleSheet">
+              <string notr="true">font-size: 20pt;
+font-weight: bold;
+color: rgb(255, 85, 0);
+</string>
+             </property>
+             <property name="text">
+              <string>Choose one type of Account</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_14">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_16" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_12">
+              <item>
+               <widget class="QPushButton" name="pushButton_4">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    background-color: #795548;
+    color: white;
+    border: 2px solid #5D4037;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #8D6E63;
+}
+
+QPushButton:pressed {
+    background-color: #5D4037;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>Debit</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_5">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    background-color: #795548;
+    color: white;
+    border: 2px solid #5D4037;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #8D6E63;
+}
+
+QPushButton:pressed {
+    background-color: #5D4037;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>PushButton</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_6">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    background-color: #795548;
+    color: white;
+    border: 2px solid #5D4037;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #8D6E63;
+}
+
+QPushButton:pressed {
+    background-color: #5D4037;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>PushButton</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_15">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_7">
+       <layout class="QGridLayout" name="gridLayout_13">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QFrame" name="frame_8">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(148, 155, 255);</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Shadow::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="QWidget" name="widget_17" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_13">
+              <item>
+               <widget class="QPushButton" name="backBtn_8">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    
+	background-color: rgb(240, 8, 11);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 8px;
+	
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: rgb(220, 8, 11);
+}
+
+QPushButton:pressed {
+    background-color: rgb(250, 8, 11);
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>Back</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_24">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="styleSheet">
+              <string notr="true">font-size: 20pt;
+font-weight: bold;
+color: rgb(0, 85, 255);</string>
+             </property>
+             <property name="text">
+              <string>Fill The Informations To Make The Account</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_17">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_18" native="true">
+             <layout class="QGridLayout" name="gridLayout_14">
+              <item row="2" column="2">
+               <widget class="QLineEdit" name="passwordNum">
+                <property name="styleSheet">
+                 <string notr="true">QLineEdit {
+    border: 2px solid #90CAF9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    color: #0D47A1;
+}
+</string>
+                </property>
+                <property name="placeholderText">
+                 <string>Pin:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLineEdit" name="accountNum">
+                <property name="styleSheet">
+                 <string notr="true">QLineEdit {
+    border: 2px solid #90CAF9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    color: #0D47A1;
+}
+</string>
+                </property>
+                <property name="placeholderText">
+                 <string>Account Number:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLineEdit" name="balanceNum">
+                <property name="styleSheet">
+                 <string notr="true">QLineEdit {
+    border: 2px solid #90CAF9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    color: #0D47A1;
+}
+</string>
+                </property>
+                <property name="placeholderText">
+                 <string>Balance:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QLineEdit" name="shabaNum">
+                <property name="styleSheet">
+                 <string notr="true">QLineEdit {
+    border: 2px solid #90CAF9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    color: #0D47A1;
+}
+</string>
+                </property>
+                <property name="placeholderText">
+                 <string>Shaba Number:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="cvv2Num">
+                <property name="styleSheet">
+                 <string notr="true">QLineEdit {
+    border: 2px solid #90CAF9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    color: #0D47A1;
+}
+</string>
+                </property>
+                <property name="placeholderText">
+                 <string>cvv2:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="cardNum">
+                <property name="styleSheet">
+                 <string notr="true">QLineEdit {
+    border: 2px solid #90CAF9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    color: #0D47A1;
+}
+</string>
+                </property>
+                <property name="placeholderText">
+                 <string>Card Number:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLineEdit" name="secondPasswordNum">
+                <property name="styleSheet">
+                 <string notr="true">QLineEdit {
+    border: 2px solid #90CAF9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    color: #0D47A1;
+}
+</string>
+                </property>
+                <property name="placeholderText">
+                 <string>Second Pin:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QPushButton" name="confirmBtn">
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+    background-color: #1565C0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #1E88E5;
+}
+
+QPushButton:pressed {
+    background-color: #0D47A1;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>Confirm</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QSpinBox" name="expireYearNum">
+                <property name="styleSheet">
+                 <string notr="true">QSpinBox {
+    border: 2px solid #90CAF9;
+    border-radius: 6px;
+    padding: 4px 6px;
+    background-color: white;
+    color: #0D47A1;
+    font-size: 14px;
+}
+
+QSpinBox::up-button, QSpinBox::down-button {
+    width: 18px;
+    height: 12px;
+    background-color: #BBDEFB;
+    border: 1px solid #64B5F6;
+}
+
+QSpinBox::up-button:hover, QSpinBox::down-button:hover {
+    background-color: #64B5F6;
+}
+
+QSpinBox::up-arrow, QSpinBox::down-arrow {
+    width: 10px;
+    height: 10px;
+    image: url(:/icons/up-arrow-dark.png);  /* Replace with a custom visible icon if needed */
+}
+</string>
+                </property>
+                <property name="suffix">
+                 <string>   Year</string>
+                </property>
+                <property name="minimum">
+                 <number>1404</number>
+                </property>
+                <property name="maximum">
+                 <number>1500</number>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QSpinBox" name="exppireMonthNum">
+                <property name="styleSheet">
+                 <string notr="true">QSpinBox {
+    border: 2px solid #90CAF9;
+    border-radius: 6px;
+    padding: 4px 6px;
+    background-color: white;
+    color: #0D47A1;
+    font-size: 14px;
+}
+
+QSpinBox::up-button, QSpinBox::down-button {
+    width: 18px;
+    height: 12px;
+    background-color: #BBDEFB;
+    border: 1px solid #64B5F6;
+}
+
+QSpinBox::up-button:hover, QSpinBox::down-button:hover {
+    background-color: #64B5F6;
+}
+
+QSpinBox::up-arrow, QSpinBox::down-arrow {
+    width: 10px;
+    height: 10px;
+    image: url(:/icons/up-arrow-dark.png);  /* Replace with a custom visible icon if needed */
+}
+</string>
+                </property>
+                <property name="suffix">
+                 <string>   Month</string>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>12</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLineEdit" name="Uname">
+                <property name="styleSheet">
+                 <string notr="true">QLineEdit {
+    border: 2px solid #90CAF9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    color: #0D47A1;
+}
+</string>
+                </property>
+                <property name="placeholderText">
+                 <string>UserName:</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_16">
              <property name="orientation">
               <enum>Qt::Orientation::Vertical</enum>
              </property>

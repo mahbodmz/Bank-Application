@@ -4,6 +4,8 @@
 #include "admin.h"
 #include "customer.h"
 #include "QMessageBox"
+#include "accountutils.h"
+#include "debitaccount.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -11,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     Admin::loadFromFile(adminHead);
     Customer::loadFromFile(customerHead);
+    loadAccountsFromFile(customerHead);
+
 
     ui->setupUi(this);
     currentRole="";
@@ -125,7 +129,7 @@ void MainWindow::on_signupBtn_clicked()
 }
 
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_backBtn_6_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
 }
@@ -155,5 +159,66 @@ void MainWindow::on_signupCustomerBtn_clicked()
 
     // Call the signup function
     Customer::signup(name, lastName, id, age, username, password, customerHead);
+}
+
+
+
+
+void MainWindow::on_addAccountBtn_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+}
+
+
+void MainWindow::on_backBtn_7_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
+
+void MainWindow::on_backBtn_8_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+}
+
+void MainWindow::handleAddAccountForCustomer() {
+    QString targetUsername = ui->Uname->text().trimmed();
+
+    Customer* targetCustomer = nullptr;
+    UserNode* current = customerHead;
+    while (current) {
+        Customer* c = dynamic_cast<Customer*>(current->data);
+        if (c && c->getUsername() == targetUsername) {
+            targetCustomer = c;
+            break;
+        }
+        current = current->next;
+    }
+
+    if (!targetCustomer) {
+        QMessageBox::warning(this, "Error", "Customer not found.");
+        return;
+    }
+
+    int expireMonth = ui->exppireMonthNum->value();
+    int expireYear = ui->expireYearNum->value();
+    int cvv = ui->cvv2Num->text().trimmed().toInt();
+    float balance = ui->balanceNum->text().trimmed().toInt();
+
+    int cardNum = ui->cardNum->text().trimmed().toInt();
+    int shabaNum = ui->shabaNum->text().trimmed().toInt();
+    int accountNum = ui->accountNum->text().trimmed().toInt(); // make sure you have this field
+
+    QString password = ui->passwordNum->text().trimmed();
+    QString secondPassword = ui->secondPasswordNum->text().trimmed(); // assuming you have this input
+
+    DebitAccount* newAcc = new DebitAccount(cardNum, shabaNum, accountNum, cvv, balance, expireYear, expireMonth, password, secondPassword);
+
+    Admin dummyAdmin;
+    dummyAdmin.addAccountForCustomer(targetCustomer, newAcc);
+
+    saveAccountToFile(targetCustomer->getUsername(), "debit", newAcc);
+
+    QMessageBox::information(this, "Success", "Account added successfully.");
 }
 
