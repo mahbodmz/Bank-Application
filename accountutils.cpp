@@ -2,6 +2,7 @@
 #include <QFile>
 #include <QTextStream>
 #include "debitaccount.h"
+#include <QDebug>
 
 void saveAccountToFile(const QString& username, const QString& accountType, CreditCard* account) {
     QFile file("accounts.txt");
@@ -48,19 +49,22 @@ void loadAccountsFromFile(UserNode* customerHead) {
 
 
         // Only supporting debit for now
-        if (type == "debit") {
+        if (type == "Debit") {
             DebitAccount* acc = new DebitAccount(
-                parts[2].toInt(),   // cardNum
-                parts[3].toInt(),   // shabaNum
-                parts[4].toInt(),   // accountNum
+                parts[2].toLongLong(),   // cardNum
+                parts[3].toLongLong(),   // shabaNum
+                parts[4].toLongLong(),   // accountNum
                 parts[5].toInt(),   // cvv
-                parts[6].toFloat(), // balance (this is important!)
+                parts[6].toDouble(), // balance (this is important!)
                 parts[7].toInt(),   // expireYear
                 parts[8].toInt(),   // expireMonth
                 parts[9],           // password
                 parts[10]           // secondPassword
                 );
-            matchedCustomer->addAccount(acc);
+            if (!matchedCustomer->addAccount(acc)) {
+                delete acc; // prevent memory leak
+                qWarning() << "Account limit reached for user:" << username;
+            }
         }
     }
 

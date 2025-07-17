@@ -6,11 +6,11 @@
 class CreditCard
 {
 protected:
-    int cardNum;
-    int shabaNum;
-    int accountNum;
+    long long cardNum;
+    long long shabaNum;
+    long long accountNum;
     int cvv;
-    float balance;
+    double balance;
     int expireYear;
     int expireMonth;
     QString password;
@@ -18,16 +18,16 @@ protected:
 public:
     CreditCard();
 
-    CreditCard(int cardNum , int shabaNum ,int accountNum,int cvv,float balance,int expireYear,int expireMonth,QString password,QString secondPassword);
+    CreditCard(long long cardNum , long long shabaNum ,long long accountNum,int cvv,double balance,int expireYear,int expireMonth,QString password,QString secondPassword);
 
 
     virtual ~CreditCard();
 
-    int getcardNum ();
-    int getshabaNum ();
-    int getaccountNum ();
+    long long getcardNum ();
+    long long getshabaNum ();
+    long long getaccountNum ();
     int getcvv ();
-    float getbalance ();
+    double getbalance ();
     int getexpireYear ();
     int getexpireMonth();
     QString getpassword ();

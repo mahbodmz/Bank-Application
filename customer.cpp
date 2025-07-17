@@ -2,6 +2,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
+#include "debitaccount.h"
 Customer::Customer() {
     accountCount = 0;
     for (int i = 0; i < 5; ++i)
@@ -68,10 +69,14 @@ void Customer::loadFromFile(UserNode*& head) {
             UserNode* newNode = new UserNode(a);
             newNode->next = head;
             head = newNode;
+
+
+
         }
     }
     file.close();
 }
+
 
 
 void Customer::saveToFile(UserNode* head) {
@@ -97,10 +102,13 @@ void Customer::saveToFile(UserNode* head) {
 }
 
 bool Customer::addAccount(CreditCard* newAcc) {
+    qDebug() << "Current account count for" << this->getUsername() << ":" << accountCount;
     if (accountCount < 5) {
         accounts[accountCount++] = newAcc;
+        qDebug() << "Account added. New count:" << accountCount;
         return true;
     }
+    qDebug() << "Account limit reached!";
     return false;
 }
 

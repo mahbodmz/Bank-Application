@@ -53,10 +53,15 @@ private slots:
 
     void on_backBtn_8_clicked();
 
+    void on_debitBtn_clicked();
+
+    void on_confirmBtn_clicked();
+
 private:
     UserNode* adminHead = nullptr;
     UserNode* customerHead = nullptr;
     Ui::MainWindow *ui;
     QString currentRole;
+    QString cardType=nullptr;
 };
 #endif // MAINWINDOW_H

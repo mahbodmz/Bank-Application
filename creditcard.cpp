@@ -2,7 +2,7 @@
 
 CreditCard::CreditCard() {}
 
-CreditCard::CreditCard(int cardNum, int shabaNum, int accountNum, int cvv, float balance,
+CreditCard::CreditCard(long long cardNum, long long shabaNum, long long accountNum, int cvv, double balance,
                        int expireYear, int expireMonth, QString password, QString secondPassword)
 {
     this->cardNum = cardNum;
@@ -19,15 +19,15 @@ CreditCard::CreditCard(int cardNum, int shabaNum, int accountNum, int cvv, float
 CreditCard::~CreditCard() {}
 
 
-int CreditCard::getcardNum(){
+long long CreditCard::getcardNum(){
     return cardNum;
 }
 
-int CreditCard::getshabaNum(){
+long long CreditCard::getshabaNum(){
     return shabaNum;
 }
 
-int CreditCard::getaccountNum(){
+long long CreditCard::getaccountNum(){
     return accountNum;
 }
 
@@ -35,7 +35,7 @@ int CreditCard::getcvv(){
     return cvv;
 }
 
-float CreditCard::getbalance(){
+double CreditCard::getbalance(){
     return balance;
 }
 

@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QCoreApplication>
 #include <QDir>
+#include "accountutils.h"
 Admin::Admin() {}
 
 Admin::~Admin() {}
@@ -111,7 +112,13 @@ void Admin::saveToFile(UserNode* head) {
 }
 
 void Admin::addAccountForCustomer(Customer* customer, CreditCard* account) {
-    if (customer && account) {
-        customer->addAccount(account);
+    if (!customer || !account) return;
+
+    if (customer->addAccount(account)) {
+        saveAccountToFile(customer->getUsername(), "debit", account);
+        QMessageBox::information(nullptr, "Success", "Account added successfully.");
+    } else {
+        QMessageBox::warning(nullptr, "Limit Reached", "This customer already has 5 accounts.");
+        delete account;
     }
 }

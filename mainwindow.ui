@@ -51,7 +51,7 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>7</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_0">
        <layout class="QGridLayout" name="gridLayout_2">
@@ -2115,7 +2115,7 @@ color: rgb(255, 85, 0);
             <widget class="QWidget" name="widget_16" native="true">
              <layout class="QHBoxLayout" name="horizontalLayout_12">
               <item>
-               <widget class="QPushButton" name="pushButton_4">
+               <widget class="QPushButton" name="debitBtn">
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
                 </property>

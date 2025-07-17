@@ -181,6 +181,12 @@ void MainWindow::on_backBtn_8_clicked()
     ui->stackedWidget->setCurrentIndex(6);
 }
 
+void MainWindow::on_debitBtn_clicked()
+{
+    cardType="Debit";
+    ui->stackedWidget->setCurrentIndex(7);
+}
+
 void MainWindow::handleAddAccountForCustomer() {
     QString targetUsername = ui->Uname->text().trimmed();
 
@@ -203,11 +209,11 @@ void MainWindow::handleAddAccountForCustomer() {
     int expireMonth = ui->exppireMonthNum->value();
     int expireYear = ui->expireYearNum->value();
     int cvv = ui->cvv2Num->text().trimmed().toInt();
-    float balance = ui->balanceNum->text().trimmed().toInt();
+    double balance = ui->balanceNum->text().trimmed().toInt();
 
-    int cardNum = ui->cardNum->text().trimmed().toInt();
-    int shabaNum = ui->shabaNum->text().trimmed().toInt();
-    int accountNum = ui->accountNum->text().trimmed().toInt(); // make sure you have this field
+    long long cardNum = ui->cardNum->text().trimmed().toLongLong();
+    long long shabaNum = ui->shabaNum->text().trimmed().toLongLong();
+    long long accountNum = ui->accountNum->text().trimmed().toLongLong(); // make sure you have this field
 
     QString password = ui->passwordNum->text().trimmed();
     QString secondPassword = ui->secondPasswordNum->text().trimmed(); // assuming you have this input
@@ -217,8 +223,36 @@ void MainWindow::handleAddAccountForCustomer() {
     Admin dummyAdmin;
     dummyAdmin.addAccountForCustomer(targetCustomer, newAcc);
 
-    saveAccountToFile(targetCustomer->getUsername(), "debit", newAcc);
 
-    QMessageBox::information(this, "Success", "Account added successfully.");
+
+
+}
+
+
+
+
+
+void MainWindow::on_confirmBtn_clicked()
+{
+    bool ok1, ok2, ok3, ok4, ok5;
+    long long cardNum = ui->cardNum->text().trimmed().toLongLong(&ok1);
+    long long shabaNum = ui->shabaNum->text().trimmed().toLongLong(&ok2);
+    long long accountNum = ui->accountNum->text().trimmed().toLongLong(&ok3);
+    int cvv = ui->cvv2Num->text().trimmed().toInt(&ok4);
+    double balance = ui->balanceNum->text().trimmed().toDouble(&ok5);
+
+    if (
+        ui->Uname->text().trimmed().isEmpty() ||
+        !ok1 || !ok2 || !ok3 || !ok4 || !ok5 ||
+        ui->expireYearNum->value() == 0 ||
+        ui->exppireMonthNum->value() == 0 ||
+        ui->passwordNum->text().trimmed().isEmpty() ||
+        ui->secondPasswordNum->text().trimmed().isEmpty()
+        ) {
+        QMessageBox::warning(this, "Missing Info", "All fields must be filled correctly and be valid numbers.");
+        return;
+    }
+
+    handleAddAccountForCustomer();
 }
 

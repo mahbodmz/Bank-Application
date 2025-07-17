@@ -11,7 +11,11 @@ private:
 public:
     Customer();
     Customer(QString name, QString lastName, QString id, int age, QString username, QString password)
-        : User(name, lastName, id, age, username, password) {}
+        : User(name, lastName, id, age, username, password)  {
+        accountCount = 0;
+        for (int i = 0; i < 5; ++i)
+            accounts[i] = nullptr;
+    }
     virtual ~Customer();
 
     bool login(const QString& username, const QString& password, UserNode* head) override;
@@ -22,6 +26,7 @@ public:
 
     static void loadFromFile(UserNode*& head);
     static void saveToFile(UserNode* head);
+
 
     static bool login(UserNode* head, const QString& username, const QString& password);
 
